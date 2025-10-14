@@ -1,0 +1,50 @@
+.services {
+  padding: 6rem 0 4rem;
+  background: var(--ivory);
+}
+
+.services h2 {
+  color: var(--teal);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.service-card {
+  background: var(--ivory);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 2px solid var(--teal);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card h3 {
+  color: var(--teal);
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

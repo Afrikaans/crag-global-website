@@ -1,0 +1,23 @@
+name: CI-security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci --ignore-scripts
+      - run: npx audit-ci --moderate  # fails on high/critical
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - name: Build production image
+        run: docker build -f Dockerfile.production -t crag-global-api:${{ github.sha }} .

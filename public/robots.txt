@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cragglobal.tech/sitemap.xml

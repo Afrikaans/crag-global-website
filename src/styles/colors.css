@@ -1,0 +1,12 @@
+:root {
+  --ivory: #FFFFF0;
+  --teal: #008080;
+  --olive: #808000;
+  
+  /* Theme variables */
+  --bg-primary: var(--ivory);
+  --text-primary: #333333;
+  --header-bg: var(--teal);
+  --header-text: var(--ivory);
+  --accent: var(--olive);
+}
