@@ -10,7 +10,7 @@ const Contact = () => {
     message: ''
   });
   const [errors, setErrors] = useState({});
-  
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,7 +20,7 @@ const Contact = () => {
 
   const validateForm = (data) => {
     const errors = {};
-    if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+    if (!data.email.match(/^[^\\\\s@]+@[^\\\\s@]+\\\\.[^\\\\s@]+$/)) {
       errors.email = 'Invalid email address';
     }
     if (data.message.length < 10) {
@@ -60,16 +60,24 @@ const Contact = () => {
                   <p>Nairobi, Kenya</p>
                 </div>
               </div>
-              
+
               <div className="info-item">
                 <i className="fas fa-phone"></i>
                 <p>+254 720 664 599</p>
               </div>
-              
+
               <div className="info-item">
                 <i className="fas fa-envelope"></i>
                 <p>info@cragglobal.tech</p>
               </div>
+            </div>
+            <div className="social-links">
+              <a href="https://www.linkedin.com/company/crag-global/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://www.instagram.com/crag_global?igsh=MW56dDNpczJ4a3J6Zg==" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i> Instagram
+              </a>
             </div>
           </div>
 
