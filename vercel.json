@@ -4,6 +4,19 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!cragglobal\\.tech$|www\\.cragglobal\\.tech$).*"
+        }
+      ],
+      "destination": "https://cragglobal.tech/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
